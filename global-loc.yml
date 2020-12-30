@@ -1,0 +1,38 @@
+eureka:
+  instance:
+    hostname: eureka
+    preferIpAddress: false
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
+        
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"      
+            
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: false     
+    groups:
+      enabled: false
+    resolve-schema-properties: false      
+  
+spring:
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false        
